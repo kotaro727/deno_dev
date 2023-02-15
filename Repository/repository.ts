@@ -6,15 +6,15 @@ export interface Entity  {
     id: Id;
 }
 
-interface HttpResponse {
+export interface HttpResponse {
     status: number;
     data?: [];
 }
 export interface Repository<T extends Entity> {
-    index:() => Promise<T[] | HttpResponse>;
-    create:(entity: T) => Promise<T | HttpResponse>;
+    index:() => Promise<T[]>;
+    create:(payload: T) => Promise<T>;
     show:(id: Id) => Promise<T>;
-    update:(id: Id) => Promise<HttpResponse>;
+    update:(payload: T) => Promise<T>;
     destroy:(id: Id) => Promise<HttpResponse>;
 }
 
