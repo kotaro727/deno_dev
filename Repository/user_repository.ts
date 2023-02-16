@@ -1,6 +1,5 @@
 import { Repository, Entity, Id, HttpResponse } from "./repository.ts";
 
-
 const url = 'http://localhost:3000/users';
 export interface User extends Entity {
     firstName: string;
